@@ -9,11 +9,6 @@ body{
 
 }
 
-#container{
-    width: calc(100% / 8);
-    aspect-ratio: 1 / 1;
-}
-
 #square{
     border: 2px solid rgba(0, 0, 0, 0.688);
     background-color: orangered;
@@ -21,24 +16,23 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     color:black;
     width: calc(100% / 8);
     aspect-ratio: 1 / 1;
     text-align: center;
-    gap: ;
+    
 }
 
 .debug {
     border: 1px solid red;
 }
 
-
-
-#grid{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-   
- 
-
+.even{
+    background-color: blue;
 }
+
+.odd{
+    background-color: red;
+}
+
