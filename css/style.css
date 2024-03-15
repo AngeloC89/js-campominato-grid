@@ -1,0 +1,44 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: orange;
+
+}
+
+#container{
+    width: calc(100% / 8);
+    aspect-ratio: 1 / 1;
+}
+
+#square{
+    border: 2px solid rgba(0, 0, 0, 0.688);
+    background-color: orangered;
+    box-shadow: 2px 2px 2px 2px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:black;
+    width: calc(100% / 8);
+    aspect-ratio: 1 / 1;
+    text-align: center;
+    gap: ;
+}
+
+.debug {
+    border: 1px solid red;
+}
+
+
+
+#grid{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+   
+ 
+
+}
