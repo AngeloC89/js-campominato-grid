@@ -26,9 +26,7 @@ button.addEventListener('click', function () {
 
 
     for (let i = 1; i <= choice; i++) {
-        const tmpHtml = NewSquare(i)
-
-
+        const tmpHtml = NewSquare(i, choice);
 
         tmpHtml.addEventListener('click', function () {
             if (even(i)) {
@@ -47,10 +45,12 @@ button.addEventListener('click', function () {
 
 
 /** ****************************** Funzioni *************************************/
-function NewSquare(content) {
-    const newSquare = document.createElement('span');
+function NewSquare(content, numSquare) {
+    let newSquare = document.createElement('span');
     newSquare.innerHTML = content;
     newSquare.setAttribute('id', 'square');
+    squareWidth = `calc(100% / ${Math.sqrt(numSquare)} - 10px)`;
+    newSquare.style.width = squareWidth;
     return newSquare;
 }
 
@@ -59,7 +59,12 @@ function even(number) {
         return 'true';
     }
 };
-
+function creaGriglia(livello) {
+    // Calcolo del numero di quadrati in base al livello
+    const numeroBase = livello; // Numero di quadrati per il livello facile
+    const numeroQuadrati = Math.floor(numeroBase / Math.sqrt(livello));
+    const dimensioneQuadrato = Math.sqrt(numeroQuadrati);
+}
 
 
 

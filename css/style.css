@@ -17,7 +17,7 @@ body{
     align-items: center;
     flex-wrap: wrap;
     color:black;
-    width: calc(100% / 10);
+;
     aspect-ratio: 1 / 1;
     text-align: center;
     cursor:crosshair;
