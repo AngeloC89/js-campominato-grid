@@ -17,14 +17,20 @@
 <body>
     <header class="mb-4 ">
         <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid">
-            <h1 class="text-center ">Campo minato</h1>
-            <button type="button" class="btn btn-primary ">Start</button>
+        <div class="container-fluid d-flex flex-row ">
+            <h1 class="col-9  ">Campo Minato</h1>
+            <select name="level" id="level" class="p-2 mx-2 col-1 " aria-label="Default select example">
+                <option value="">Select a level</option>
+                <option value="100" data-value="100">Facile</option>
+                <option value="81" data-value="81">Medio</option>
+                <option value="49" data-value="49">Difficile</option>
+            </select>
+            <button type="button" class="btn btn-primary col-1">Start</button>
         </div>
       </nav>
     </header>
    
-    <div class="container d-flex flex-wrap justify-content-center align-content-center ">
+    <div class="container d-flex flex-wrap justify-content-center align-content-center gap-1  ">
         
     </div>
     

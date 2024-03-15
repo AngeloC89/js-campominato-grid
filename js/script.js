@@ -14,28 +14,34 @@ con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 
 
 let button = document.querySelector('.btn.btn-primary')
 const container = document.querySelector('.container');
-button.addEventListener('click', function(){
+let levelChoice = document.getElementById('level');
+const easyLevel = 100;
+const mediumLevel = 81;
+const hardLevel = 49;
+button.addEventListener('click', function () {
     console.log('il tasto funziona');
-  container.innerHTML = '';
+    container.innerHTML = '';
+    choice = parseInt(levelChoice.value);
+    console.log(choice);
 
 
-for (let i = 1; i <= 64; i++) {
+    for (let i = 1; i <= choice; i++) {
+        const tmpHtml = NewSquare(i)
 
 
-    const tmpHtml = NewSquare(i)
 
-    tmpHtml.addEventListener('click', function(){
-        if (even(i)) {
-            tmpHtml.classList.toggle('even');
-        } else {
-            tmpHtml.classList.toggle('odd');
-        }
-    });
+        tmpHtml.addEventListener('click', function () {
+            if (even(i)) {
+                tmpHtml.classList.toggle('even');
+            } else {
+                tmpHtml.classList.toggle('odd');
+            }
+        });
 
 
-   
-    container.appendChild(tmpHtml);
-}
+
+        container.appendChild(tmpHtml);
+    }
 
 })
 
@@ -48,10 +54,10 @@ function NewSquare(content) {
     return newSquare;
 }
 
-function even(number){
-    if(number % 2 === 0){
+function even(number) {
+    if (number % 2 === 0) {
         return 'true';
-    }   
+    }
 };
 
 

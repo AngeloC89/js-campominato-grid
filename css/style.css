@@ -11,14 +11,13 @@ body{
 
 #square{
     border: 2px solid rgba(0, 0, 0, 0.688);
-    /* background-color: orangered; */
-    box-shadow: 2px 2px 2px 2px black;
+    box-shadow: 2px 2px 12px 2px black;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     color:black;
-    width: calc(100% / 8);
+    width: calc(100% / 10);
     aspect-ratio: 1 / 1;
     text-align: center;
     cursor:crosshair;
@@ -31,5 +30,14 @@ body{
 
 .odd{
     background-color: red;
+}
+
+#level{
+    
+    
+    background-color: black;
+    color: white;
+    border: 5px solid orange;
+    cursor: pointer;
 }
 
