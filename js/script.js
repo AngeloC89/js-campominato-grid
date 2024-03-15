@@ -1,8 +1,5 @@
 
-const bigBox = document.createElement('div');
 
-
-bigBox.className = 'd-flex justify-content-between align-content-center flex-wrap';
 // console.log(square)
 
 let button = document.querySelector('.btn btn-primary')
@@ -13,32 +10,22 @@ for (let i = 1; i <= 64; i++) {
 
     const tmpHtml = NewSquare(i)
 
-    tmpHtml.addEventListener('click', function () {
+    tmpHtml.addEventListener('click', function(){
         if (even(i)) {
-            tmpHtml.classList.add('even')
+            tmpHtml.classList.toggle('even');
         } else {
-            tmpHtml.classList.add('odd')
-        };
+            tmpHtml.classList.toggle('odd');
+        }
+    });
 
 
-
-
-
-
-    })
-
-
-
-
-    bigBox.appendChild(tmpHtml);
-    // console.log(bigBox);
     const container = document.querySelector('.container');
-    container.append(bigBox);
+    container.appendChild(tmpHtml);
 }
 
 
 function NewSquare(content) {
-    const newSquare = document.createElement('div');
+    const newSquare = document.createElement('span');
     newSquare.innerHTML = content;
     newSquare.setAttribute('id', 'square');
     return newSquare;
@@ -47,10 +34,8 @@ function NewSquare(content) {
 function even(number){
     if(number % 2 === 0){
         return 'true';
-    } else{
-        return 'false';
-    }
-}
+    }   
+};
 
 
 
