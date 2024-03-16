@@ -23,7 +23,7 @@ button.addEventListener('click', function () {
 
 //questo ciclo-for crea, tramite la funzione NewSquare, un numero di quadrati stabilito da choice, che a sua volta equivale a uno dei tre livelli di difficoltà.
     for (let i = 1; i <= choice; i++) {
-        const tmpHtml = NewSquare(i, choice);
+        const tmpHtml = NewSquare(i, choice,'id', 'square');
 
         tmpHtml.addEventListener('click', function () {
             if (even(i)) {
@@ -46,10 +46,10 @@ button.addEventListener('click', function () {
 /** ****************************** Funzioni *************************************/
 
 //questa funzione crea i singoli quadrati stabilendo anche la width usando calc... numSquare verrà sostituito dal numero di quadrati che vogliamo creare, che in questo caso è deciso tramite "choice(difficoltà)", ma nella funzione serve solo a stabilire la radice quadrata per usarla nella width e stabilire la lunghezza della riga della griglia
-function NewSquare(content, numSquare) {
+function NewSquare(content, numSquare, type, idClass) {
     let newSquare = document.createElement('span');
     newSquare.innerHTML = content;
-    newSquare.setAttribute('id', 'square');
+    newSquare.setAttribute(`${type}`, `${idClass}`);//ho modificato la funzione in modo da poter usare una qualsiasi classe o id senza dover compromettere la sua indipendenza dalla classe/id stessa
     squareWidth = `calc(100% / ${Math.sqrt(numSquare)} - 10px)`;
     newSquare.style.width = squareWidth;
     return newSquare;

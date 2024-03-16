@@ -37,6 +37,8 @@ nav {
     text-align: center;
     cursor: crosshair;
     animation: color 4s infinite;
+    
+   
 }
 
 @keyframes color {
