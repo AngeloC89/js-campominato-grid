@@ -12,27 +12,26 @@ con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 
 */
 
 
-let button = document.querySelector('.btn.btn-primary')
+const button = document.querySelector('.btn.btn-primary')
 const container = document.querySelector('.container');
 let levelChoice = document.getElementById('level');
-const easyLevel = 100;
-const mediumLevel = 81;
-const hardLevel = 49;
 button.addEventListener('click', function () {
-    console.log('il tasto funziona');
+    // console.log('il tasto funziona');
     container.innerHTML = '';
     choice = parseInt(levelChoice.value);
-    console.log(choice);
+    // console.log(choice);
 
-
+//questo ciclo-for crea, tramite la funzione NewSquare, un numero di quadrati stabilito da choice, che a sua volta equivale a uno dei tre livelli di difficoltà.
     for (let i = 1; i <= choice; i++) {
         const tmpHtml = NewSquare(i, choice);
 
         tmpHtml.addEventListener('click', function () {
             if (even(i)) {
                 tmpHtml.classList.toggle('even');
+                console.log('Il numero della casella è: ' + i)
             } else {
                 tmpHtml.classList.toggle('odd');
+                console.log('Il numero della casella è: ' + i)
             }
         });
 
@@ -45,6 +44,8 @@ button.addEventListener('click', function () {
 
 
 /** ****************************** Funzioni *************************************/
+
+//questa funzione crea i singoli quadrati stabilendo anche la width usando calc... numSquare verrà sostituito dal numero di quadrati che vogliamo creare, che in questo caso è deciso tramite "choice(difficoltà)", ma nella funzione serve solo a stabilire la radice quadrata per usarla nella width e stabilire la lunghezza della riga della griglia
 function NewSquare(content, numSquare) {
     let newSquare = document.createElement('span');
     newSquare.innerHTML = content;
@@ -54,17 +55,12 @@ function NewSquare(content, numSquare) {
     return newSquare;
 }
 
+//questa funzione serve a stabilire se un numero è pari.. lo useremo per associare un determinato colore ai numeri pari.
 function even(number) {
     if (number % 2 === 0) {
         return 'true';
     }
 };
-function creaGriglia(livello) {
-    // Calcolo del numero di quadrati in base al livello
-    const numeroBase = livello; // Numero di quadrati per il livello facile
-    const numeroQuadrati = Math.floor(numeroBase / Math.sqrt(livello));
-    const dimensioneQuadrato = Math.sqrt(numeroQuadrati);
-}
 
 
 
